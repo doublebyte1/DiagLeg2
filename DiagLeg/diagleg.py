@@ -30,8 +30,8 @@ import resources_rc
 # Import the code for the dialog
 import diaglegdialog
 
-sys.path.append('/home/joana/.eclipse/org.eclipse.platform_3.8_155965261/plugins/org.python.pydev_2.8.2.2013090511/pysrc')
-from pydevd import *
+#sys.path.append('/home/joana/.eclipse/org.eclipse.platform_3.8_155965261/plugins/org.python.pydev_2.8.2.2013090511/pysrc')
+#from pydevd import *
 
 class DiagLeg:
     
