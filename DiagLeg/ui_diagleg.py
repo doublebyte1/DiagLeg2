@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'ui_diagleg.ui'
 #
-# Created: Thu Sep 19 11:42:59 2013
+# Created: Tue Oct  8 11:39:09 2013
 #      by: PyQt4 UI code generator 4.9.3
 #
 # WARNING! All changes made in this file will be lost!
@@ -17,13 +17,12 @@ except AttributeError:
 class Ui_DiagLeg(object):
     def setupUi(self, DiagLeg):
         DiagLeg.setObjectName(_fromUtf8("DiagLeg"))
-        DiagLeg.resize(400, 499)
-        icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(_fromUtf8(":/diagleg/icon.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        DiagLeg.setWindowIcon(icon)
-        self.gridLayout = QtGui.QGridLayout(DiagLeg)
-        self.gridLayout.setObjectName(_fromUtf8("gridLayout"))
-        self.frame = QtGui.QFrame(DiagLeg)
+        DiagLeg.resize(525, 634)
+        self.dockWidgetContents = QtGui.QWidget()
+        self.dockWidgetContents.setObjectName(_fromUtf8("dockWidgetContents"))
+        self.verticalLayout = QtGui.QVBoxLayout(self.dockWidgetContents)
+        self.verticalLayout.setObjectName(_fromUtf8("verticalLayout"))
+        self.frame = QtGui.QFrame(self.dockWidgetContents)
         self.frame.setFrameShape(QtGui.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtGui.QFrame.Raised)
         self.frame.setObjectName(_fromUtf8("frame"))
@@ -33,25 +32,26 @@ class Ui_DiagLeg(object):
         self.textEdit.setReadOnly(True)
         self.textEdit.setObjectName(_fromUtf8("textEdit"))
         self.gridLayout_2.addWidget(self.textEdit, 0, 0, 1, 1)
-        self.gridLayout.addWidget(self.frame, 0, 0, 1, 1)
-        self.view = QtGui.QGraphicsView(DiagLeg)
+        self.verticalLayout.addWidget(self.frame)
+        self.view = QtGui.QGraphicsView(self.dockWidgetContents)
         self.view.setObjectName(_fromUtf8("view"))
-        self.gridLayout.addWidget(self.view, 1, 0, 1, 1)
+        self.verticalLayout.addWidget(self.view)
         self.horizontalLayout = QtGui.QHBoxLayout()
         self.horizontalLayout.setObjectName(_fromUtf8("horizontalLayout"))
-        self.pushGenerate = QtGui.QPushButton(DiagLeg)
+        self.pushGenerate = QtGui.QPushButton(self.dockWidgetContents)
         self.pushGenerate.setObjectName(_fromUtf8("pushGenerate"))
         self.horizontalLayout.addWidget(self.pushGenerate)
-        self.pushExport = QtGui.QPushButton(DiagLeg)
+        self.pushExport = QtGui.QPushButton(self.dockWidgetContents)
         self.pushExport.setObjectName(_fromUtf8("pushExport"))
         self.horizontalLayout.addWidget(self.pushExport)
-        self.pushClose = QtGui.QPushButton(DiagLeg)
+        self.pushClose = QtGui.QPushButton(self.dockWidgetContents)
         self.pushClose.setObjectName(_fromUtf8("pushClose"))
         self.horizontalLayout.addWidget(self.pushClose)
-        self.pushAbout = QtGui.QPushButton(DiagLeg)
+        self.pushAbout = QtGui.QPushButton(self.dockWidgetContents)
         self.pushAbout.setObjectName(_fromUtf8("pushAbout"))
         self.horizontalLayout.addWidget(self.pushAbout)
-        self.gridLayout.addLayout(self.horizontalLayout, 2, 0, 1, 1)
+        self.verticalLayout.addLayout(self.horizontalLayout)
+        DiagLeg.setWidget(self.dockWidgetContents)
 
         self.retranslateUi(DiagLeg)
         QtCore.QObject.connect(self.pushGenerate, QtCore.SIGNAL(_fromUtf8("clicked()")), DiagLeg.onOk)
@@ -61,7 +61,7 @@ class Ui_DiagLeg(object):
         QtCore.QMetaObject.connectSlotsByName(DiagLeg)
 
     def retranslateUi(self, DiagLeg):
-        DiagLeg.setWindowTitle(QtGui.QApplication.translate("DiagLeg", "Diagram Legend", None, QtGui.QApplication.UnicodeUTF8))
+        DiagLeg.setWindowTitle(QtGui.QApplication.translate("DiagLeg", "DiagLeg", None, QtGui.QApplication.UnicodeUTF8))
         self.pushGenerate.setToolTip(QtGui.QApplication.translate("DiagLeg", "Click to generate legend", None, QtGui.QApplication.UnicodeUTF8))
         self.pushGenerate.setWhatsThis(QtGui.QApplication.translate("DiagLeg", "It generates the legend", None, QtGui.QApplication.UnicodeUTF8))
         self.pushGenerate.setText(QtGui.QApplication.translate("DiagLeg", "Generate", None, QtGui.QApplication.UnicodeUTF8))

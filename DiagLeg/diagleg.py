@@ -65,26 +65,33 @@ class DiagLeg:
 
 
     def initGui(self):
-        # Create action that will start plugin configuration
-        self.action = QAction(QIcon(":/diagleg/icon.png"), \
-            u"DiagLeg", self.iface.mainWindow())
-            
-    	self.iface.registerMainWindowAction(self.action, "F7") # action1 is triggered by the F7 key
-    	QObject.connect(self.action, SIGNAL("triggered()"),self.keyActionF7)
-                        
+        
+        self.action = QAction(QIcon(":/diagleg/icon.png"),  u"DiagLeg", self.iface.mainWindow())           
+        QObject.connect(self.action, SIGNAL("triggered()"), self.showHideDockWidget)
+
+        # Add toolbar button and menu item
         self.iface.addToolBarIcon(self.action)
-        self.iface.addPluginToMenu("&GISforEAF", self.action)	  
+        self.iface.addPluginToMenu("&GISforEAF", self.action)
+
+        # dock widget
+        self.dockWidget = diaglegdialog.DiagLegDialog()        
+        	  
                 
     def unload(self):
         self.iface.removePluginMenu("&GISforEAF",self.action)
         self.iface.removeToolBarIcon(self.action)        
-        self.iface.unregisterMainWindowAction(self.action)
+        #self.iface.unregisterMainWindowAction(self.action)
 	  
+    def showHideDockWidget(self):
+        if self.dockWidget.isVisible():
+            self.dockWidget.hide()
+        else:
+            self.iface.addDockWidget(Qt.LeftDockWidgetArea, self.dockWidget)            
+            self.dockWidget.show()
+                  
+      
+      
     def keyActionF7(self):
-      self.run()
+      self.showHideDockWidget()
 	  	  
-    # run method that performs all the real work
-    def run(self):            
-        dlg = diaglegdialog.DiagLegDialog()
-        dlg.exec_()          
             

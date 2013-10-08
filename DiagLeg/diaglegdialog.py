@@ -37,7 +37,7 @@ from ui_diagleg import Ui_DiagLeg
 from __init__ import *
 
 # create the dialog for zoom to point
-class DiagLegDialog(QDialog):
+class DiagLegDialog(QDockWidget):
 
     def __init__(self):
         QDialog.__init__(self)
@@ -142,7 +142,7 @@ class DiagLegDialog(QDialog):
       node = root.firstChild()
       stop=False
       while not node.isNull() and stop==False:
-	if node.toElement().tagName() == "SingleCategoryDiagramRenderer":
+	if node.toElement().tagName() == "SingleCategoryDiagramRenderer" or node.toElement().tagName() =="LinearlyInterpolatedDiagramRenderer":
 	  self.readOverlay(node,listFields)
 	  stop=True
 	node = node.nextSibling()    
