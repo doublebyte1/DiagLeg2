@@ -20,19 +20,18 @@
  ***************************************************************************/
  This script initializes the plugin, making it known to QGIS.
 """
-appVers=1.21
+appVers=2.2
 
 def name():
     return "Diagram Legend Plugin"
 def description():
     return "Diagram Legend Plugin"
 def version():
-    #return "Version 1.1"
     return "Version" + appVers
 def icon():
     return "icon.png"
 def qgisMinimumVersion():
-    return "1.6"
+    return "2.0"
 def qgisMaximumVersion():
     return "2.99"
 def classFactory(iface):
