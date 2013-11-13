@@ -70,8 +70,8 @@ class DiagLegDialog(QDockWidget):
 	p.end(); 
 	img.save(strFileName);
       else:
-	QMessageBox.critical(self, QString("DiagLeg"),
-				  QString("Sorry: Unsupported format!"),
+	QMessageBox.critical(self, unicode("DiagLeg"),
+				  unicode("Sorry: Unsupported format!"),
 				  QMessageBox.Ok
 				  );
 	return      
@@ -172,7 +172,7 @@ class DiagLegDialog(QDockWidget):
 		
       except ValueError, e:
 	return False, "Failed to import: %s" % e
-	self._fname = QString()
+	self._fname = unicode()
 	self._dirty = True
 
       return True, QFileInfo(fname).fileName()
