@@ -2,8 +2,7 @@
 
 # Form implementation generated from reading ui file 'ui_diagleg.ui'
 #
-# Created: Tue Oct  8 11:39:09 2013
-#      by: PyQt4 UI code generator 4.9.3
+# Created by: PyQt4 UI code generator 4.11.4
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -12,7 +11,16 @@ from PyQt4 import QtCore, QtGui
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
 except AttributeError:
-    _fromUtf8 = lambda s: s
+    def _fromUtf8(s):
+        return s
+
+try:
+    _encoding = QtGui.QApplication.UnicodeUTF8
+    def _translate(context, text, disambig):
+        return QtGui.QApplication.translate(context, text, disambig, _encoding)
+except AttributeError:
+    def _translate(context, text, disambig):
+        return QtGui.QApplication.translate(context, text, disambig)
 
 class Ui_DiagLeg(object):
     def setupUi(self, DiagLeg):
@@ -61,18 +69,18 @@ class Ui_DiagLeg(object):
         QtCore.QMetaObject.connectSlotsByName(DiagLeg)
 
     def retranslateUi(self, DiagLeg):
-        DiagLeg.setWindowTitle(QtGui.QApplication.translate("DiagLeg", "DiagLeg", None, QtGui.QApplication.UnicodeUTF8))
-        self.pushGenerate.setToolTip(QtGui.QApplication.translate("DiagLeg", "Click to generate legend", None, QtGui.QApplication.UnicodeUTF8))
-        self.pushGenerate.setWhatsThis(QtGui.QApplication.translate("DiagLeg", "It generates the legend", None, QtGui.QApplication.UnicodeUTF8))
-        self.pushGenerate.setText(QtGui.QApplication.translate("DiagLeg", "Generate", None, QtGui.QApplication.UnicodeUTF8))
-        self.pushExport.setToolTip(QtGui.QApplication.translate("DiagLeg", "Export the legend to an image or a webpage", None, QtGui.QApplication.UnicodeUTF8))
-        self.pushExport.setWhatsThis(QtGui.QApplication.translate("DiagLeg", "Click to export the legend to an image or a webpage", None, QtGui.QApplication.UnicodeUTF8))
-        self.pushExport.setText(QtGui.QApplication.translate("DiagLeg", "Export", None, QtGui.QApplication.UnicodeUTF8))
-        self.pushClose.setToolTip(QtGui.QApplication.translate("DiagLeg", "Closes this dialogue", None, QtGui.QApplication.UnicodeUTF8))
-        self.pushClose.setWhatsThis(QtGui.QApplication.translate("DiagLeg", "This closes the dialogue", None, QtGui.QApplication.UnicodeUTF8))
-        self.pushClose.setText(QtGui.QApplication.translate("DiagLeg", "Close", None, QtGui.QApplication.UnicodeUTF8))
-        self.pushAbout.setToolTip(QtGui.QApplication.translate("DiagLeg", "About DiagLeg", None, QtGui.QApplication.UnicodeUTF8))
-        self.pushAbout.setWhatsThis(QtGui.QApplication.translate("DiagLeg", "Click to show information about the credits of plugin", None, QtGui.QApplication.UnicodeUTF8))
-        self.pushAbout.setText(QtGui.QApplication.translate("DiagLeg", "About", None, QtGui.QApplication.UnicodeUTF8))
+        DiagLeg.setWindowTitle(_translate("DiagLeg", "DiagLeg", None))
+        self.pushGenerate.setToolTip(_translate("DiagLeg", "Click to generate legend", None))
+        self.pushGenerate.setWhatsThis(_translate("DiagLeg", "It generates the legend", None))
+        self.pushGenerate.setText(_translate("DiagLeg", "Generate", None))
+        self.pushExport.setToolTip(_translate("DiagLeg", "Export the legend to an image or a webpage", None))
+        self.pushExport.setWhatsThis(_translate("DiagLeg", "Click to export the legend to an image or a webpage", None))
+        self.pushExport.setText(_translate("DiagLeg", "Export", None))
+        self.pushClose.setToolTip(_translate("DiagLeg", "Closes this dialogue", None))
+        self.pushClose.setWhatsThis(_translate("DiagLeg", "This closes the dialogue", None))
+        self.pushClose.setText(_translate("DiagLeg", "Close", None))
+        self.pushAbout.setToolTip(_translate("DiagLeg", "About DiagLeg", None))
+        self.pushAbout.setWhatsThis(_translate("DiagLeg", "Click to show information about the credits of plugin", None))
+        self.pushAbout.setText(_translate("DiagLeg", "About", None))
 
 import resources_rc

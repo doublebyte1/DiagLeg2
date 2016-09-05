@@ -25,6 +25,7 @@ import sys, os.path
 from PyQt4.QtCore import *
 from PyQt4.QtGui import *
 from qgis.core import *
+
 # Initialize Qt resources from file resources.py
 import resources_rc
 # Import the code for the dialog
@@ -34,13 +35,12 @@ import diaglegdialog
 #from pydevd import *
 
 class DiagLeg:
-    
+
     def __init__(self, iface):
         #Debug VERSION: REMOVE THIS FOR RELEASE!!! /////////////7
         #settrace()
 
         self.iface = iface
-        self.qgsVersion = unicode(QGis.QGIS_VERSION_INT)
 
         # For i18n support
         userPluginPath = QFileInfo(QgsApplication.qgisUserDbFilePath()).path() + "/python/plugins/DiagLeg"
@@ -65,8 +65,8 @@ class DiagLeg:
 
 
     def initGui(self):
-        
-        self.action = QAction(QIcon(":/diagleg/icon.png"),  u"DiagLeg", self.iface.mainWindow())           
+
+        self.action = QAction(QIcon(":/diagleg/icon.png"),  u"DiagLeg", self.iface.mainWindow())
         QObject.connect(self.action, SIGNAL("triggered()"), self.showHideDockWidget)
 
         # Add toolbar button and menu item
@@ -74,24 +74,22 @@ class DiagLeg:
         self.iface.addPluginToMenu("&GISforEAF", self.action)
 
         # dock widget
-        self.dockWidget = diaglegdialog.DiagLegDialog()        
-        	  
-                
+        self.dockWidget = diaglegdialog.DiagLegDialog()
+
+
     def unload(self):
         self.iface.removePluginMenu("&GISforEAF",self.action)
-        self.iface.removeToolBarIcon(self.action)        
+        self.iface.removeToolBarIcon(self.action)
         #self.iface.unregisterMainWindowAction(self.action)
-	  
+
     def showHideDockWidget(self):
         if self.dockWidget.isVisible():
             self.dockWidget.hide()
         else:
-            self.iface.addDockWidget(Qt.LeftDockWidgetArea, self.dockWidget)            
+            self.iface.addDockWidget(Qt.LeftDockWidgetArea, self.dockWidget)
             self.dockWidget.show()
-                  
-      
-      
+
+
+
     def keyActionF7(self):
       self.showHideDockWidget()
-	  	  
-            
